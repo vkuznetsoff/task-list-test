@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.content__row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+
+.content__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 10px;
+}
+
+.content__item__head {
+  font-weight: 700;
+}
+
+.content__item__text {
+  opacity: 70%;
+}
