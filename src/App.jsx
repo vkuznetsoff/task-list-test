@@ -1,48 +1,27 @@
-import Task from "./components/Task/Task";
-
-import "antd/dist/antd.css";
-import { Pagination } from "antd";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Taskpage from "./components/TaskPage/TaskPage";
+import TablePage from "./components/TablePage/TablePage";
+import { tasks } from "./data/data";
 
 import "./App.css";
-import { useEffect, useState } from "react";
-import Head from "./components/Task/Head";
+import { createContext } from "react";
 
-function App({ tasks }) {
-  const [page, setPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+export const TasksContext = createContext(tasks);
 
-  const lastTaskIdx = page * rowsPerPage;
-  const firstTaskIdx = lastTaskIdx - rowsPerPage;
+function App() {
 
-  const currentTasks = tasks.slice(firstTaskIdx, lastTaskIdx);
-
-  const handleChange = (page, pageSize) => {
-    setPage(page);
-    setRowsPerPage(pageSize);
-  };
-  useEffect(() => {
-    console.log("page: ", page, "rowsPerPage: ", rowsPerPage);
-  }, [page, rowsPerPage]);
-
-  const head = ["Номер/Дата", "Тип задания/Автор", "Аккаунт/Терминал", "Статус"]
   return (
-    <div className="App">
-      <div className="paginator">
-        <Pagination
-          total={tasks.length}
-          showSizeChanger
-          showQuickJumper
-          showTotal={(total) => `Всего заданий: ${total}`}
-          onChange={handleChange}
-        />
-      </div>
-
-      <Head head={head} />
-
-      {currentTasks.map((task) => (
-        <Task key={task.id} task={task} />
-      ))}
-    </div>
+    <TasksContext.Provider value={tasks}>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<TablePage tasks={tasks} />}></Route>
+            <Route path="/:id" element={<Taskpage />}></Route>
+          </Routes>
+        </div>
+        <div className="footer"></div>
+      </BrowserRouter>
+    </TasksContext.Provider>
   );
 }
 

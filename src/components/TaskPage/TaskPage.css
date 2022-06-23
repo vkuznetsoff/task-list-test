@@ -1,0 +1,19 @@
+.wrapper {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+.header p {
+    color: grey;
+    padding: 10px;
+    margin: 0 20px;
+    border: 1px solid;
+}

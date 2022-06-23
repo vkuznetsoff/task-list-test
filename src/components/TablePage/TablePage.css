@@ -1,0 +1,17 @@
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.header {
+  font-size: 18pt;
+  font-weight: 700;
+  border-bottom: 0.5px solid grey;
+  margin: 15px;
+}
+
+.taskitem:hover {
+  background: rgb(233, 232, 232);
+}

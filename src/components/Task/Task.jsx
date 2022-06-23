@@ -3,7 +3,7 @@ import Badge from "../Badge/Badge";
 
 import "./Task.css";
 
-const CreateName = (obj) => {
+export const CreateName = (obj) => {
   return `${obj.surname} ${obj.name[0]}. ${obj.patronymic[0]}.`;
 };
 

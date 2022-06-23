@@ -35,7 +35,8 @@ const Badge = ({ status }) => {
         ? "#F1C40F"
         : status === "started"
         ? "#3498DB"
-        : status === "declined" ? "#EC7063"
+        : status === "declined"
+        ? "#EC7063"
         : "none",
   };
 
