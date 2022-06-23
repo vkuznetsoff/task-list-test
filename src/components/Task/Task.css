@@ -2,19 +2,25 @@
   .content__grid {
     display: grid;
     grid-template-columns: 0.5fr minmax(300px,1fr) minmax(150px,1fr) minmax(150px,0.5fr);
-  
+  }
+
+  .grid__header {
+    padding: 10px 5px;
+
+  }
+
+  .header__text {
+   font-size: 18pt;
   }
   
   .grid__item {
-      border-bottom: 1px solid;
+    border-bottom: 1px solid;
     height: 70px;
     padding: 10px 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: visible;
-    /* white-space: nowrap; */
- 
+    overflow: visible; 
   }
 
   .nowrap {
@@ -36,7 +42,8 @@
   }
 
   .item_status {
-
+    
+    
   }
 
   .grid__item__head {

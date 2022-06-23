@@ -1,4 +1,5 @@
 import React from "react";
+import Badge from "../Badge/Badge";
 
 import "./Task.css";
 
@@ -10,6 +11,7 @@ const Task = ({ task }) => {
   return (
     <div className="content">
       <div className="content__grid">
+          
         <div className="grid__item item_title">
           <div className="grid__item__head">№{task.id}</div>
           <div className="grid__item__text">{task.created_date}</div>
@@ -25,7 +27,7 @@ const Task = ({ task }) => {
           <div className="grid__item__text nowrap">{task.terminal.name}</div>
         </div>
         <div className="grid__item item_status">
-          <div className="grid__item__head">{task.status}</div>
+          <div className="grid__item__head"><Badge status={task.status} /> </div>
         </div>
       </div>
     </div>
