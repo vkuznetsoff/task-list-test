@@ -5,7 +5,7 @@ import Badge from "../Badge/Badge";
 import { CreateName } from "../Task/Task";
 import "./TaskPage.css";
 
-const Taskpage = ({ task }) => {
+const Taskpage = () => {
   const tasks = useContext(TasksContext);
 
   const { id } = useParams();
